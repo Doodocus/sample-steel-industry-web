@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Steel Products: TMT, Structural, Coils, Pipes, Plates</title>
+<meta name="description" content="Steel product catalogue with grades, sizes and standards, plus a steel weight calculator.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E0F11">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Steel Industries">
+<meta property="og:title" content="Steel Products">
+<meta property="og:description" content="Steel product catalogue with grades, sizes and standards.">
+<meta property="og:image" content="assets/images/hero-furnace.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/config.js" defer></script>
+<script src="js/calculator.js" defer></script>
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="products">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="siteHeader"></header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="media"><img src="assets/images/texture-steel.jpg" alt="" width="1920" height="1080" decoding="async" onerror="this.remove()"></div>
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a> / Products</p>
+      <h1>Steel, specified properly.</h1>
+      <p class="lead">Grades, sizes and standards for every product family. Open any product to see its specification sheet and request a quote.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="catTitle">
+    <div class="container">
+      <h2 id="catTitle" class="sr">Product catalogue</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filter products">
+        <button type="button" data-filter="all" aria-pressed="true">All products</button>
+        <button type="button" data-filter="long" aria-pressed="false">Long products</button>
+        <button type="button" data-filter="flat" aria-pressed="false">Flat products</button>
+        <button type="button" data-filter="tubular" aria-pressed="false">Tubular</button>
+      </div>
+      <div class="grid grid-3" id="catalogue"></div>
+    </div>
+  </section>
+
+  <section class="section section--texture" id="calculator" aria-labelledby="calcTitle">
+    <div class="container calc-wrap">
+      <div>
+        <p class="eyebrow">Steel weight calculator</p>
+        <h2 id="calcTitle">Weight, per metre to per truck.</h2>
+        <p class="lead">Pick a shape and material, enter dimensions, length and quantity. Results update as you type.</p>
+        <ul class="ticks">
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg>Round / TMT: d² ÷ 162 kg/m</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg>Pipe: (OD − t) × t × 0.02466 kg/m</li>
+          <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg>Plate: t × w × l × 7.85 × 10⁻⁶ kg</li>
+        </ul>
+      </div>
+      <div class="calc" data-calc></div>
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="ctaTitle">
+    <div class="container">
+      <div>
+        <h2 id="ctaTitle">Need the full price list and catalogue?</h2>
+        <p>Ask on WhatsApp and our sales team will send the latest catalogue and availability.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" data-wa="Hello, please send your product catalogue." href="#">Get catalogue on WhatsApp</a>
+        <a class="btn btn-ghost" href="contact.html">Send an enquiry</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="backdrop" id="backdrop" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+  <button type="button" class="drawer-close" aria-label="Close specifications">
+    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <div class="drawer-body"></div>
+</aside>
+
+<footer class="site-footer" id="siteFooter"></footer>
+</body>
+</html>
