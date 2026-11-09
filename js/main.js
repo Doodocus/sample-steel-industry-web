@@ -130,6 +130,16 @@
   var fab = doc.createElement("div"); fab.className = "fab";
   fab.innerHTML = '<a class="fab-wa" href="' + wa("Hello " + C.name + ", I have a steel requirement.") + '" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">' + ic("chat") + '</a><a class="fab-call" href="tel:' + esc(C.phoneHref) + '" aria-label="Call ' + esc(C.phone) + '">' + ic("phone") + "</a>";
   body.appendChild(fab);
+  // Hide floating buttons while the CTA band or footer is on screen
+  var fabTargets = doc.querySelectorAll(".cta-band, .site-footer");
+  if (fabTargets.length && "IntersectionObserver" in window) {
+    var fabSeen = new Set();
+    var fabIO = new IntersectionObserver(function (ents) {
+      ents.forEach(function (e) { e.isIntersecting ? fabSeen.add(e.target) : fabSeen.delete(e.target); });
+      fab.classList.toggle("fab-hide", fabSeen.size > 0);
+    });
+    fabTargets.forEach(function (t) { fabIO.observe(t); });
+  }
 
   /* ---------- Section renderers ---------- */
   function fill(id, html) { var el = doc.getElementById(id); if (el) el.innerHTML = html; return el; }
